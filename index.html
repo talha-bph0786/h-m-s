@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f0f4f8, #e0e9f0);
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            max-width: 700px;
+            margin: 100px auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        h1 {
+            color: #e74c3c;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            display: block;
+            margin: 15px auto;
+            padding: 15px 25px;
+            font-size: 18px;
+            color: white;
+            background-color: #2ecc71;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #27ae60;
+            transform: translateY(-2px);
+        }
+        button:active {
+            transform: translateY(1px);
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Welcome to the Hospital Management System</h1>
+    <button onclick="window.location.href='Doctorlogin.html'">Doctor Login</button>
+    <button onclick="window.location.href='Patientlogin.html'">Patient Login</button>
+    <button onclick="window.location.href='AppointmentReservation.html'">Appointment Reservation</button>
+    <button onclick="window.location.href='DoctorProfile.html'">Doctor Profile</button>
+    <button onclick="window.location.href='PatientHistory.html'">Patient History</button>
+</div>
+
+<footer>
+    &copy; 2024 Hospital Management System | All Rights Reserved
+</footer>
+
+</body>
+</html>

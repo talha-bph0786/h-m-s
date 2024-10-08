@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Reservation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #e74c3c;
+        }
+        label {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            display: block;
+        }
+        select, input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .timeslot-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .timeslot {
+            width: 30%;
+            padding: 10px;
+            background-color: #2ecc71;
+            color: white;
+            text-align: center;
+            margin-bottom: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .timeslot:hover {
+            background-color: #27ae60;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #c0392b;
+        }
+        .confirmation {
+            text-align: center;
+            margin-top: 20px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Book an Appointment</h2>
+    <form>
+        <label for="doctor">Choose Doctor</label>
+        <select id="doctor" required>
+            <option value="">Select a doctor</option>
+            <option value="Dr. Smith">Dr. Smith - Cardiologist</option>
+            <option value="Dr. Johnson">Dr. Johnson - Neurologist</option>
+            <option value="Dr. Adams">Dr. Adams - General Practitioner</option>
+        </select>
+
+        <label for="time-slot">Available Time Slots</label>
+        <div class="timeslot-container">
+            <div class="timeslot">9:00 AM</div>
+            <div class="timeslot">10:00 AM</div>
+            <div class="timeslot">11:00 AM</div>
+            <div class="timeslot">2:00 PM</div>
+            <div class="timeslot">3:00 PM</div>
+            <div class="timeslot">4:00 PM</div>
+        </div>
+
+        <label for="name">Patient Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <button type="submit">Confirm Appointment</button>
+    </form>
+
+    <div class="confirmation">
+        <p>Your appointment has been booked successfully!</p>
+    </div>
+</div>
+
+<script>
+    const timeslots = document.querySelectorAll('.timeslot');
+    let selectedTime = null;
+
+    timeslots.forEach(slot => {
+        slot.addEventListener('click', function() {
+            timeslots.forEach(slot => slot.style.backgroundColor = '#2ecc71'); // Reset all slots
+            this.style.backgroundColor = '#27ae60'; // Highlight selected slot
+            selectedTime = this.textContent;
+        });
+    });
+
+    document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (selectedTime && document.getElementById('doctor').value && document.getElementById('name').value && document.getElementById('email').value) {
+            document.querySelector('.confirmation').style.display = 'block';
+        } else {
+            alert('Please fill in all fields and select a time slot.');
+        }
+    });
+</script>
+
+</body>
+</html>

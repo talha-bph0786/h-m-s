@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #e74c3c;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h3 {
+            color: #c0392b;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #e74c3c;
+            color: white;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #3498db;
+        }
+        .download-button {
+            display: block;
+            margin: 20px auto;
+            width: 200px;
+            background-color: #27ae60;
+        }
+        .download-button:hover {
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Your Medical History</h2>
+
+    <!-- Section: Past Appointments -->
+    <div class="section">
+        <h3>Past Appointments</h3>
+        <table>
+            <tr>
+                <th>Doctor Name</th>
+                <th>Date</th>
+                <th>Diagnosis</th>
+                <th>Prescribed Medications</th>
+            </tr>
+            <tr>
+                <td>Dr. Smith</td>
+                <td>10/09/2024</td>
+                <td>Flu</td>
+                <td>Paracetamol</td>
+            </tr>
+            <tr>
+                <td>Dr. Johnson</td>
+                <td>05/08/2024</td>
+                <td>High Blood Pressure</td>
+                <td>Amlodipine</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Section: Summary of Treatments -->
+    <div class="section">
+        <h3>Summary of Treatments</h3>
+        <p>
+            You have received treatment for various conditions, including flu and high blood pressure. 
+            Please follow your prescribed medication and attend regular check-ups to monitor your health.
+        </p>
+    </div>
+
+    <!-- Section: Download/Print History -->
+    <div class="section">
+        <button class="download-button">Download Medical History</button>
+        <button class="download-button">Print Medical History</button>
+    </div>
+</div>
+
+</body>
+</html>
